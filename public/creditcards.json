@@ -1,0 +1,30 @@
+[ 
+    {
+        "id": 0,
+        "cardName": "Anywhere Card",
+        "Apr": "33.9%",
+        "BalanceTransferOfferDuration": "0 Months",
+        "PurchaseOfferDuration": "0 Months",
+        "creditAvailable": "£300"
+    },
+    
+    {
+        "id": 1,
+        "cardName": "Student Life",
+        "Apr": "18.9%",
+        "BalanceTransferOfferDuration": "0 Months",
+        "PurchaseOfferDuration": "6 Months",
+        "creditAvailable": "£1200"
+
+    },
+   
+    {
+        "id": 2,
+        "cardname": "Liquid Card",
+        "Apr": "33.9%",
+        "BalanceTransferOfferDuration": "12 Months",
+        "PurchaseOfferDuration": "6 Months",
+        "creditAvailable": "£3000"
+    }
+
+]

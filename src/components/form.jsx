@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import axios from 'axios';
 import Cards from '../components/cards'
 export default class form extends Component {
     constructor(props){
@@ -13,10 +13,20 @@ export default class form extends Component {
             annualincome: '',
             employmentstatus: '',
             submitted: false,
+            creditcards: [],
         }
     }
-    
-    
+
+    // recreating connecting to a database to get the data....
+    componentDidMount() {
+        axios.get(`http://localhost:3000/creditcards.json`)
+            .then(res => {
+                const data = res.data;
+                // setting the creditcard array in the json to the state.
+                this.setState({creditcards: data });
+            })
+    }
+
     handleSubmit = (e) => {
         e.preventDefault();
        console.log(this.state);
