@@ -5,7 +5,7 @@
         "Apr": "33.9%",
         "BalanceTransferOfferDuration": "0 Months",
         "PurchaseOfferDuration": "0 Months",
-        "creditAvailable": "£300"
+        "creditAvailable": "300"
     },
     
     {
@@ -14,7 +14,7 @@
         "Apr": "18.9%",
         "BalanceTransferOfferDuration": "0 Months",
         "PurchaseOfferDuration": "6 Months",
-        "creditAvailable": "£1200"
+        "creditAvailable": "1200"
 
     },
    
@@ -24,7 +24,7 @@
         "Apr": "33.9%",
         "BalanceTransferOfferDuration": "12 Months",
         "PurchaseOfferDuration": "6 Months",
-        "creditAvailable": "£3000"
+        "creditAvailable": "3000"
     }
 
 ]

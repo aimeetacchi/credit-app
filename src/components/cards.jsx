@@ -8,7 +8,9 @@ export default class cards extends Component {
           <h1>Hello, {this.props.applicant.name} These are all the cards you're eligible for </h1>
         
 
-            <Card cards={this.props.applicant.creditcards} />
+            <Card
+            cards={this.props.applicant.creditcards}
+            applicant={this.props.applicant}/>
         
       </div>
     )
