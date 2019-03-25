@@ -20,7 +20,7 @@
    
     {
         "id": 2,
-        "cardname": "Liquid Card",
+        "cardName": "Liquid Card",
         "Apr": "33.9%",
         "BalanceTransferOfferDuration": "12 Months",
         "PurchaseOfferDuration": "6 Months",
