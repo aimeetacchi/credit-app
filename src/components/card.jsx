@@ -12,14 +12,15 @@ export default class card extends Component {
     console.log(total);
     this.setState({totalCredit: total});
   }
+
   removeCard = (creditAvailable) => {
-    const total = creditAvailable - this.state.totalCredit;
+    const total = this.state.totalCredit - creditAvailable;
     console.log(total);
     this.setState({totalCredit: total});
   }
 
   render() {
-    const {annualincome } = this.props.applicant;
+    const {annualincome, employmentstatus } = this.props.applicant;
     
     const cardwidth = {
       width: '18rem',
@@ -70,7 +71,20 @@ export default class card extends Component {
 
     return (
       <div>
-        { parseInt(annualincome) > 16000 ? (<div className="row">{liquidcard} <br/> {anytimecard} </div>) : anytimecard }
+        {
+          // if student ====
+          employmentstatus.toUpperCase() === 'STUDENT' ? 
+          // if salary over 16000 ---
+          parseInt(annualincome) > 16000 ?
+          (<div className="row"> {studentcard}<br/>{liquidcard} <br/> {anytimecard} </div>) : (<div className="row"> {studentcard} <br/> {anytimecard} </div>) : 
+          // if not student
+          employmentstatus.toUpperCase() !== 'STUDENT' ?
+          // salary over 16000
+          parseInt(annualincome) > 16000 ?
+          (<div className="row"> {liquidcard} <br/> {anytimecard} </div>)
+          : (<div className="row"> {anytimecard} </div>) : null
+      }
+        {/* { parseInt(annualincome) > 16000 ? (<div className="row">{liquidcard} <br/> {anytimecard} </div>) : anytimecard } */}
         <p>Your Total credit is {this.state.totalCredit}</p>
       </div>
     )
