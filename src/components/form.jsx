@@ -14,6 +14,8 @@ export default class form extends Component {
             employmentstatus: '',
             submitted: false,
             creditcards: [],
+            // buttonPress1: false,
+            // buttonPress2: false,
         }
     }
 
@@ -120,7 +122,7 @@ export default class form extends Component {
             </div>
 
             <div className="form-group">
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-success">Submit</button>
             </div>
             </form>
        ) : <Cards applicant={this.state}/> }
