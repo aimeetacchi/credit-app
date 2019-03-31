@@ -14,8 +14,6 @@ export default class form extends Component {
             employmentstatus: '',
             submitted: false,
             creditcards: [],
-            // buttonPress1: false,
-            // buttonPress2: false,
         }
     }
 
@@ -46,17 +44,19 @@ export default class form extends Component {
     
   render() {
     return (
-        <div className="container">
+        <div className="container p-3 mb-2 bg-white text-dark">
+        
        {!this.state.submitted ? (
           <form onSubmit={this.handleSubmit}>
-            <h1>Fill in the form below to get your credit card choices</h1>
-            <div className="form-group">
+          <h2>Fill in the form below to get your credit card choices</h2>
+            <div className="form-group mt-5">
                 <label htmlFor="city">Title</label>
                 <input
                 type="text"
                 className="form-control"
                 id="title"
                 name="title"
+                required
                 placeholder="Mr, Mrs, Miss, Ms, Dr"
                 value={this.state.title}
                 onChange={this.handleInputChange}/>
@@ -66,6 +66,7 @@ export default class form extends Component {
                 <label htmlFor="name">Full Name</label>
                 <input
                 type="text"
+                required
                 className="form-control"
                 id="name"
                 name="name"
@@ -78,6 +79,7 @@ export default class form extends Component {
                 <label htmlFor="address">Address</label>
                 <input
                 type="text"
+                required
                 className="form-control"
                 id="address"
                 name="address"
@@ -90,6 +92,7 @@ export default class form extends Component {
                 <label htmlFor="postcode">Postcode</label>
                 <input
                 type="text"
+                required
                 className="form-control"
                 id="postcode"
                 name="postcode"
@@ -101,6 +104,7 @@ export default class form extends Component {
                 <label htmlFor="annualincome">Annual Income can contain only numbers</label>
                 <input
                 type="tel"
+                required
                 className="form-control"
                 id="annualincome"
                 name="annualincome" 
@@ -110,15 +114,16 @@ export default class form extends Component {
             </div>
 
             <div className="form-group">
-                <label htmlFor="employmentstatus">What is your employment status?</label>
-                <input
-                type="text"
-                className="form-control"
-                id="employmentstatus"
-                name="employmentstatus"
-                placeholder="full time"
-                value={this.state.employmentstatus}
-                onChange={this.handleInputChange}/>
+            <label htmlFor="employmentstatus">What is your employment status?</label>
+                 <select onChange={this.handleInputChange} id="employmentstatus"  name="employmentstatus" className="custom-select" required>
+                    
+                    <option value="Full Time">Full Time</option>
+                    <option value="Part Time">Part Time</option>
+                    <option value="Student">Student</option>
+                    <option value="Retired">Retired</option>
+                    <option value="Self Employed">Self Employed</option>
+                    <option value="Home Maker">Home Maker</option>
+                </select>
             </div>
 
             <div className="form-group">
