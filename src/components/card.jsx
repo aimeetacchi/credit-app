@@ -52,10 +52,12 @@ export default class card extends Component {
           <div onClick={this.toggleHidden1} className="card-header"><strong>{this.props.cards[0].cardName}</strong> <i className="fas fa-chevron-down"></i></div>
           
           {!this.state.isHiddenCard1 && <div className="card-body">
-            <p className="card-text"><strong>Credit Available:</strong> £{this.props.cards[0].creditAvailable}</p>
+            <img className="card-img-top" src="./img/card.png" alt="card"/>
+            
             <p className="card-text"><strong>ARP:</strong> {this.props.cards[0].Apr}</p>
             <p className="card-text"><strong>Balance Transfer Offer Duration:</strong> {this.props.cards[0].BalanceTransferOfferDuration}</p>
             <p className="card-text"><strong>Purchase Offer Duration:</strong> {this.props.cards[0].PurchaseOfferDuration}</p>
+            <p className="card-text"><strong>Credit Available:</strong> £{this.props.cards[0].creditAvailable}</p>
 
             <input type="submit" value="Choose" disabled={this.state.disabledButton1} className="btn btn-success" onClick={(e) => this.chooseCard(parseInt(this.props.cards[0].creditAvailable))}/>
             
@@ -68,10 +70,12 @@ export default class card extends Component {
           <div onClick={this.toggleHidden2}  className="card-header"><strong>{this.props.cards[1].cardName}</strong> <i className="fas fa-chevron-down"></i></div>
           
           {!this.state.isHiddenCard2 &&<div className="card-body">
-            <p className="card-text"><strong>Credit Available: </strong> £{this.props.cards[1].creditAvailable}</p>
+            <img className="card-img-top" src="./img/card.png" alt="card"/>
+            
             <p className="card-text"><strong>APR: </strong> {this.props.cards[1].Apr}</p>
             <p className="card-text"><strong>Balance Transfer Offer Duration:</strong> {this.props.cards[1].BalanceTransferOfferDuration}</p>
             <p className="card-text"><strong>Purchase Offer Duration:</strong> {this.props.cards[1].PurchaseOfferDuration}</p>
+            <p className="card-text"><strong>Credit Available: </strong> £{this.props.cards[1].creditAvailable}</p>
 
             <button className="btn btn-success" disabled={this.state.disabledButton2} onClick={(e) => this.chooseCard(parseInt(this.props.cards[1].creditAvailable))}>Choose</button>
 
@@ -84,10 +88,13 @@ export default class card extends Component {
         <div onClick={this.toggleHidden3}  className="card-header"><strong>{this.props.cards[2].cardName}</strong> <i className="fas fa-chevron-down"></i></div>
     
         {!this.state.isHiddenCard3 && <div className="card-body">
-        <p className="card-text"><strong>Credit Available:</strong> £{this.props.cards[2].creditAvailable}</p>
+          <img className="card-img-top" src="./img/card.png" alt="card"/>
+        
         <p className="card-text"><strong>APR:</strong> {this.props.cards[2].Apr}</p>
         <p className="card-text"><strong>Balance Transfer Offer Duration:</strong>  {this.props.cards[2].BalanceTransferOfferDuration}</p>
         <p className="card-text"><strong>Purchase Offer Duration:</strong>  {this.props.cards[2].PurchaseOfferDuration}</p>
+        <p className="card-text"><strong>Credit Available:</strong> £{this.props.cards[2].creditAvailable}</p>
+
         <button className="btn btn-success" onClick={(e) => this.chooseCard(parseInt(this.props.cards[2].creditAvailable))}>Choose</button>
         <button className="btn btn-danger" onClick={(e) => this.removeCard(parseInt(this.props.cards[2].creditAvailable))}> Remove</button>
       </div>}

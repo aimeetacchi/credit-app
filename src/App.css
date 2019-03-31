@@ -27,4 +27,11 @@
 
 .card-header {
   cursor: pointer;
+  display:block;
+}
+
+.fas {
+  float: right;
+  font-size: 20px;
+  vertical-align: middle;
 }
