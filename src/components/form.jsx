@@ -19,8 +19,8 @@ export default class form extends Component {
 
     // recreating connecting to a database to get the data....
     componentDidMount() {
-        // axios.get(`http://localhost:3000/creditcards.json`)
-           axios.get(`https://aimee-creditapp.netlify.com/creditcards.json`)
+        axios.get(`http://localhost:3000/creditcards.json`)
+        //    axios.get(`https://aimee-creditapp.netlify.com/creditcards.json`)
             .then(res => {
                 const data = res.data;
                 // setting the creditcard array in the json to the state.
@@ -51,16 +51,16 @@ export default class form extends Component {
           <form onSubmit={this.handleSubmit}>
           <h2>Fill in the form below to get your credit card choices</h2>
             <div className="form-group mt-5">
-                <label htmlFor="city">Title</label>
-                <input
-                type="text"
-                className="form-control"
-                id="title"
-                name="title"
-                required
-                placeholder="Mr, Mrs, Miss, Ms, Dr"
-                value={this.state.title}
-                onChange={this.handleInputChange}/>
+             
+                <label htmlFor="title">Title</label>
+                     <select name="title" onChange={this.handleInputChange} id="title" className="custom-select">
+                    
+                    <option value="Mr">Mr</option>
+                    <option value="Mrs">Mrs</option>
+                    <option value="Miss">Miss</option>
+                    <option value="Ms">Ms</option>
+                    <option value="Dr">Dr</option>
+                </select>
             </div>
 
           <div className="form-group">
@@ -116,7 +116,7 @@ export default class form extends Component {
 
             <div className="form-group">
             <label htmlFor="employmentstatus">What is your employment status?</label>
-                 <select onChange={this.handleInputChange} id="employmentstatus"  name="employmentstatus" className="custom-select" required>
+                 <select onChange={this.handleInputChange} id="employmentstatus" name="employmentstatus" className="custom-select" required>
                     
                     <option value="Full Time">Full Time</option>
                     <option value="Part Time">Part Time</option>
