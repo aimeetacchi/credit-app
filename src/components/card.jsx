@@ -7,19 +7,51 @@ export default class card extends Component {
     isHiddenCard1: true,
     isHiddenCard2: true,
     isHiddenCard3: true,
-    disabledButton1: false,
+    hideBtn1: false,
+    hideBtn2: false,
+    hideBtn3: false,
   }
 
-  chooseCard = (creditAvailable) => {
+  chooseCard = (creditAvailable, hideBtn) => {
     const total = creditAvailable + this.state.totalCredit;
     console.log(total);
     this.setState({totalCredit: total});
+    
+    if(hideBtn === 'hideBtn1'){
+      this.setState({
+        hideBtn1: !this.state.hideBtn1
+      })
+    } else if(hideBtn === 'hideBtn2'){
+      this.setState({
+        hideBtn2: !this.state.hideBtn2
+      })
+    } else if(hideBtn === 'hideBtn3') {
+      this.setState({
+        hideBtn3: !this.state.hideBtn3
+      })
+    }
+   
   }
 
-  removeCard = (creditAvailable) => {
+  removeCard = (creditAvailable, hideBtn) => {
     const total = this.state.totalCredit - creditAvailable;
     console.log(total);
     this.setState({totalCredit: total});
+
+    if(hideBtn === 'hideBtn1') {
+      this.setState({
+        hideBtn1: !this.state.hideBtn1
+      })
+    } else if(hideBtn === 'hideBtn2'){
+      this.setState({
+        hideBtn2: !this.state.hideBtn2
+      })
+    } else if(hideBtn === 'hideBtn3'){
+      this.setState({
+        hideBtn3: !this.state.hideBtn3
+      })
+    }
+  
   }
 
   toggleHidden1 = () => {
@@ -59,9 +91,11 @@ export default class card extends Component {
             <p className="card-text"><strong>Purchase Offer Duration:</strong> {this.props.cards[0].PurchaseOfferDuration}</p>
             <p className="card-text"><strong>Credit Available:</strong> £{this.props.cards[0].creditAvailable}</p>
 
-            <input type="submit" value="Choose" disabled={this.state.disabledButton1} className="btn btn-success" onClick={(e) => this.chooseCard(parseInt(this.props.cards[0].creditAvailable))}/>
+            {!this.state.hideBtn1 && <input type="submit" value="Choose Card" className="btn btn-success" onClick={(e) => this.chooseCard(parseInt(this.props.cards[0].creditAvailable), 'hideBtn1')}/>}
             
-            <input type="submit" value="Remove" className="btn btn-danger" onClick={(e) => this.removeCard(parseInt(this.props.cards[0].creditAvailable))}/>
+            {this.state.hideBtn1 && <input type="submit" value="Remove Card" className="btn btn-danger" onClick={(e) => this.removeCard(parseInt(this.props.cards[0].creditAvailable), 'hideBtn1')}/>}
+
+            {this.state.hideBtn1 && <p class="m-2 bg-success text-white"> This card has been added</p>}
           </div>}
         </div>)
 
@@ -77,9 +111,11 @@ export default class card extends Component {
             <p className="card-text"><strong>Purchase Offer Duration:</strong> {this.props.cards[1].PurchaseOfferDuration}</p>
             <p className="card-text"><strong>Credit Available: </strong> £{this.props.cards[1].creditAvailable}</p>
 
-            <button className="btn btn-success" disabled={this.state.disabledButton2} onClick={(e) => this.chooseCard(parseInt(this.props.cards[1].creditAvailable))}>Choose</button>
+            {!this.state.hideBtn2 && <input type="submit" value="Choose Card" className="btn btn-success" onClick={(e) => this.chooseCard(parseInt(this.props.cards[1].creditAvailable), 'hideBtn2')}/>}
+            
+            {this.state.hideBtn2 && <input type="submit" value="Remove Card" className="btn btn-danger" onClick={(e) => this.removeCard(parseInt(this.props.cards[1].creditAvailable), 'hideBtn2')}/>}
 
-            <button className="btn btn-danger" onClick={(e) => this.removeCard(parseInt(this.props.cards[1].creditAvailable))}> Remove</button>
+            {this.state.hideBtn2 && <p class="m-2 bg-success text-white"> This card has been added</p>}
           </div>}
         </div>)
 
@@ -95,8 +131,11 @@ export default class card extends Component {
         <p className="card-text"><strong>Purchase Offer Duration:</strong>  {this.props.cards[2].PurchaseOfferDuration}</p>
         <p className="card-text"><strong>Credit Available:</strong> £{this.props.cards[2].creditAvailable}</p>
 
-        <button className="btn btn-success" onClick={(e) => this.chooseCard(parseInt(this.props.cards[2].creditAvailable))}>Choose</button>
-        <button className="btn btn-danger" onClick={(e) => this.removeCard(parseInt(this.props.cards[2].creditAvailable))}> Remove</button>
+        {!this.state.hideBtn3 && <input type="submit" value="Choose Card" className="btn btn-success" onClick={(e) => this.chooseCard(parseInt(this.props.cards[2].creditAvailable), 'hideBtn3')}/>}
+            
+        {this.state.hideBtn3 && <input type="submit" value="Remove Card" className="btn btn-danger" onClick={(e) => this.removeCard(parseInt(this.props.cards[2].creditAvailable), 'hideBtn3')}/>}
+
+        {this.state.hideBtn3 && <p class="m-2 bg-success text-white"> This card has been added</p>}
       </div>}
   </div>)
 
