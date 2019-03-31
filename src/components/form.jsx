@@ -19,8 +19,8 @@ export default class form extends Component {
 
     // recreating connecting to a database to get the data....
     componentDidMount() {
-        axios.get(`http://localhost:3000/creditcards.json`)
-        //    axios.get(`https://aimee-creditapp.netlify.com/creditcards.json`)
+        // axios.get(`http://localhost:3000/creditcards.json`)
+           axios.get(`https://aimee-creditapp.netlify.com/creditcards.json`)
             .then(res => {
                 const data = res.data;
                 // setting the creditcard array in the json to the state.
